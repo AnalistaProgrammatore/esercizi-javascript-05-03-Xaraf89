@@ -1,37 +1,32 @@
-//Create an object that stores individual letters in an array and
-//has a function for displaying the letters as a single word.
+//Store a set of words in an array and display the contents both forward and backward. 
 
-//versione light senza oggetto
+//qui rimaniamo dentro l'array e invertiamo i valori
 
-const parole = ["a", "b", "c", "d", "e", "f"]
-let a = parole.join("")
-console.log(a)
+let array = ["ape", 2, 3, 4, 5, 6, 7, 8, 9]
+let array2 = [...array].reverse();
+console.log(array)
+console.log(array2)
 
-/////////////////////
+//////////////////////
+//Con questo oggetto tiriamo fuori tutte le parole e invertiamo il tutto
 
-//creo oun oggetto che unisce tutte le lettere
-
-class lettereUnite {
-    constructor() {
-        this.lettere = []
-    }
-
-    aggiungi(lettera) {
-        this.lettere.push(lettera);
-    }
-
-    unisci() {
-        return this.lettere.join("")
+let oggettoMesi = {
+    mesi: [],
+    add(parole) {
+        this.mesi.push(parole)
+    },
+    avanti() {
+        return this.mesi.join(", ")
+    },
+    dietro() {
+        return this.mesi.reduce((acc, curr) => curr + ", " + acc)
     }
 }
 
+oggettoMesi.add("gennaio")
+oggettoMesi.add("marzo")
+oggettoMesi.add("giugno")
+oggettoMesi.add("dicembre")
 
-
-let nuovaParola = new lettereUnite;
-
-nuovaLettera.aggiungi("c");
-nuovaLettera.aggiungi("a");
-nuovaLettera.aggiungi("n");
-nuovaLettera.aggiungi("e");
-
-console.log(nuovaLettera.unisci())
+console.log(oggettoMesi.avanti())
+console.log(oggettoMesi.dietro())

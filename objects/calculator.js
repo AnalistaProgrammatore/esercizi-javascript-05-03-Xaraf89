@@ -4,6 +4,7 @@ eseguano le 4 operazioni fondamentali sulla proprietà values e restituiscano
 in output il risultato dell'operazione. Ad esempio: */
 
 let calculator = {
+    values=[],
     sum: function () {
         return this.values.reduce((x, y) => x + y)
     },

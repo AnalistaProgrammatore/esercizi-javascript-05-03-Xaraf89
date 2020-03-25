@@ -1,33 +1,30 @@
-//Store a set of words in an array and display the contents both forward and backward. 
+//Create an object that stores individual letters in an array and
+//has a function for displaying the letters as a single word.
 
-//qui rimaniamo dentro l'array e invertiamo i valori
+//versione light senza oggetto
 
-let array = ["ape", 2, 3, 4, 5, 6, 7, 8, 9]
-let array2 = [...array].reverse();
-console.log(array)
-console.log(array2)
+const parole = ["a", "b", "c", "d", "e", "f"]
+let a = parole.join("")
+console.log(a)
 
-//////////////////////
-//Con questo oggetto tiriamo fuori tutte le parole e invertiamo il tutto
+/////////////////////
 
-let oggettoMesi = {
-    mesi: [],
-    add(parole) {
-        this.mesi.push(parole)
-    },
-    avanti() {
-        return this.mesi.join(", ")
-    },
-    dietro() {
-        return this.mesi.reduce((acc, curr) => curr + ", " + acc)
-    }
+//creo un oggetto che unisce tutte le lettere
+
+var randomLettera = []
+
+function add(lettera) {
+    randomLettera.push(lettera)
+
+}
+add("c")
+add("a")
+add("n")
+add("e")
+
+function convertiStringa(randomLettera, item) {
+    return randomLettera + item
 }
 
-oggettoMesi.add("gennaio")
-oggettoMesi.add("marzo")
-oggettoMesi.add("giugno")
-oggettoMesi.add("dicembre")
-
-console.log(oggettoMesi.avanti())
-console.log(oggettoMesi.dietro())
-
+var b = randomLettera.reduce(convertiStringa)
+console.log(b)
